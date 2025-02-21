@@ -12,4 +12,8 @@ describe("calculator", () => {
     test("divide two numbers", () => {
         expect(calculator.divide(8, 4)).toBe(2);
     });
+
+    test("multiply two numbers", () => {
+        expect(calculator.multiply(2, 3)).toBe(6);
+    });
 });
