@@ -3,30 +3,33 @@ export default function ceaserCipher(string, number) {
     let newString = "";
 
     for (let i = 0; i < string.length; i++) {
-        let characterUpperCase = false;
+        let isUpperCase = false;
         let character = string[i];
+        let newCharacter = character;
         
-        if (string[i].match(/[A-Z]/)) {        
-            characterUpperCase = true;
+        if (character.match(/[A-Z]/gi)) {
+            if (character === character.toUpperCase()) {                
+                isUpperCase = true;
 
-            character = string[i].toLowerCase();             
+                character = string[i].toLowerCase();
+            };
+
+            let index = alphabet.indexOf(character);        
+            let shiftedIndex = index + number;      
+        
+            if (shiftedIndex > 25) {
+                shiftedIndex = shiftedIndex - 26;
+            };
+
+            newCharacter = alphabet[shiftedIndex];           
+
+            if (isUpperCase) {
+                newCharacter = newCharacter.toUpperCase();
+                isUpperCase = false;            
+            };
         };
-
-        let index = alphabet.indexOf(character);        
-        let shiftedIndex = index + number;      
-      
-        if (shiftedIndex > 25) {
-            shiftedIndex = shiftedIndex - 26;
-        };
-
-        let shiftedCharacter = alphabet[shiftedIndex];
-
-        if (characterUpperCase) {
-            shiftedCharacter = shiftedCharacter.toUpperCase();
-            characterUpperCase = false;            
-        };
-
-        newString += shiftedCharacter;
+               
+        newString += newCharacter;
     };
 
     return newString;

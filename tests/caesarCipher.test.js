@@ -8,4 +8,8 @@ describe("ceasar cipher", () => {
     test("case preservation", () => {
         expect(ceaserCipher("HeLLo", 3)).toBe("KhOOr");
     });
+
+    test("punctuation", () => {
+        expect(ceaserCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+    });
 })
