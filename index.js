@@ -1,3 +1,3 @@
 import ceaserCipher from "./functions/caesarCipher.js";
 
-console.log(ceaserCipher("xyz", 3))
+console.log(ceaserCipher("HeLLo", 3))
