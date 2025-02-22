@@ -1,5 +1,4 @@
-export default function ceaserCipher(string, number) {
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+export default function ceaserCipher(string, number) {   
     let newString = "";
 
     for (let i = 0; i < string.length; i++) {
@@ -12,16 +11,9 @@ export default function ceaserCipher(string, number) {
                 isUpperCase = true;
 
                 character = string[i].toLowerCase();
-            };
+            };         
 
-            let index = alphabet.indexOf(character);        
-            let shiftedIndex = index + number;      
-        
-            if (shiftedIndex > 25) {
-                shiftedIndex = shiftedIndex - 26;
-            };
-
-            newCharacter = alphabet[shiftedIndex];           
+            newCharacter = shiftedCharacter(character, number);           
 
             if (isUpperCase) {
                 newCharacter = newCharacter.toUpperCase();
@@ -33,4 +25,19 @@ export default function ceaserCipher(string, number) {
     };
 
     return newString;
+};
+
+const shiftedCharacter = (character, number) => { 
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    let index = alphabet.indexOf(character);
+    let shiftedIndex = index + number;      
+        
+    if (shiftedIndex > 25) {
+        shiftedIndex = shiftedIndex - 26;
+    };
+
+    const shiftedCharacter = alphabet[shiftedIndex];
+    
+    return shiftedCharacter;
 };
