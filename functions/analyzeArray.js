@@ -1,13 +1,20 @@
 export default function analyzeArray(array) {
     return {
-        average: calculateAverage(array)
+        average: getAverage(array),
+        min: getMin(array)
     };
 };
 
-const calculateAverage = (array) => {
+const getAverage = (array) => {
     const arrayAverage = array.reduce((sum, currentValue) => {
         return sum + currentValue;
     }, 0) / array.length;
 
     return arrayAverage;
+};
+
+const getMin = (array) => {
+    array.sort((a, b) => a - b);
+
+    return array[0];
 };
