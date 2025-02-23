@@ -2,7 +2,8 @@ export default function analyzeArray(array) {
     return {
         average: getAverage(array),
         min: getMin(array),
-        max: getMax(array)
+        max: getMax(array),
+        length: array.length
     };
 };
 
