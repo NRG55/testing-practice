@@ -1,4 +1,4 @@
-import analyzeArray from "./functions/analyzeArray.js";
+import analyzeArray from "../functions/analyzeArray.js";
 
 describe("analyze array", () => {
     test("avarage", () => {
