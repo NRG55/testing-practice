@@ -1,7 +1,8 @@
 export default function analyzeArray(array) {
     return {
         average: getAverage(array),
-        min: getMin(array)
+        min: getMin(array),
+        max: getMax(array)
     };
 };
 
@@ -17,4 +18,10 @@ const getMin = (array) => {
     array.sort((a, b) => a - b);
 
     return array[0];
+};
+
+const getMax = (array) => {
+    array.sort((a, b) => a - b);
+
+    return array[array.length - 1];
 };

@@ -8,4 +8,8 @@ describe("analyze array", () => {
     test("min", () => {
         expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('min', 1);
     });
+
+    test("max", () => {
+        expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('max', 8);
+    });
 })
